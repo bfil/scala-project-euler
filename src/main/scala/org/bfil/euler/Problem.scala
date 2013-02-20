@@ -1,6 +1,6 @@
 package org.bfil.euler
 
-abstract class Problem {
+abstract class Problem extends ProblemUtilities {
   val name:String
   val description:String
   val solution:AnyVal

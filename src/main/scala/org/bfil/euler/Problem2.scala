@@ -16,8 +16,8 @@ object Problem2 extends Problem {
   val solution = 4613732
   
   // Parameters
+  val max = 4000000
   
-  def solve() = {
-    0
-  }
+  def solve() =
+    fibs.filter( _ % 2 == 0 ).takeWhile( _ < max ).sum
 }
