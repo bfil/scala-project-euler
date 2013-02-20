@@ -3,7 +3,7 @@ package org.bfil.euler
 import org.bfil.euler._
 
 object Problem4 extends Problem {
-  
+
   val name = "Largest palindrome product"
   val description =
     """
@@ -12,10 +12,17 @@ object Problem4 extends Problem {
   	Find the largest palindrome made from the product of two 3-digit numbers.
     """
   val solution = 906609
-  
+
   // Parameters
+  val min = 100
   val max = 999
-  
+
   def solve() =
-    0
+    
+    (for (
+      i <- min to max;
+      j <- i to max;
+      val product = (i * j) if isPalindrome( product.toString )
+    ) yield product).
+      max
 }

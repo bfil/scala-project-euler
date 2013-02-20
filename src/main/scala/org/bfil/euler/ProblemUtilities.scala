@@ -15,4 +15,6 @@ trait ProblemUtilities {
     }
     ps
   }
+  
+  def isPalindrome(s: String): Boolean = s == s.reverse
 }
