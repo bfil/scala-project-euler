@@ -1,2 +1,2 @@
-scala-project-euler
+Scala Project Euler
 ===================
