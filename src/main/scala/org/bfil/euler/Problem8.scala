@@ -32,8 +32,10 @@ object Problem8 extends Problem {
     84580156166097919133875499200524063689912560717606
     05886116467109405077541002256983155200055935729725
     71636269561882670428252483600823257530420752963450
-    """.replace("\n", "").replace(" ","")
+    """.replace("\n", "").replace(" ", "")
 
-  def solve() =
-    0
+  def solve() = {
+    val digits = num.toArray.map(_.toString.toInt)
+    (0 to digits.length - 5).map(n => digits.slice(n, n + 5).product).max
+  }
 }
