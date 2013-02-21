@@ -1,7 +1,5 @@
 package org.bfil.euler
 
-import org.bfil.euler._
-
 object Problem2 extends Problem {
 
   val name = "Even Fibonacci numbers"

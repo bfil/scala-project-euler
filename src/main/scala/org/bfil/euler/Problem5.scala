@@ -1,6 +1,5 @@
 package org.bfil.euler
 
-import org.bfil.euler._
 import scala.math._
 
 object Problem5 extends Problem {

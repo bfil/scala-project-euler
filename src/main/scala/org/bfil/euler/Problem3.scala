@@ -1,6 +1,5 @@
 package org.bfil.euler
 
-import org.bfil.euler._
 import scala.math.sqrt
 
 object Problem3 extends Problem {

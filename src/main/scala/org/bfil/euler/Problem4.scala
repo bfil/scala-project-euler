@@ -1,7 +1,5 @@
 package org.bfil.euler
 
-import org.bfil.euler._
-
 object Problem4 extends Problem {
 
   val name = "Largest palindrome product"

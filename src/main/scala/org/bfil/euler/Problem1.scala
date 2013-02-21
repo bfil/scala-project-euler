@@ -1,7 +1,5 @@
 package org.bfil.euler
 
-import org.bfil.euler._
-
 object Problem1 extends Problem {
 
   val name = "Multiples of 3 and 5"

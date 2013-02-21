@@ -1,7 +1,5 @@
 package org.bfil.euler
 
-import org.bfil.euler._
-
 object Problem6 extends Problem {
 
   val name = "Sum square difference"
