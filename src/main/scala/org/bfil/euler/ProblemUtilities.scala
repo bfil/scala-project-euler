@@ -18,8 +18,8 @@ trait ProblemUtilities {
 
   def isPalindrome(s: String): Boolean = s == s.reverse
 
-  def factors(n: Int): List[Int] = {
-    def ldf(k: Int, n: Int): Int = {
+  def factors(n: Long): List[Long] = {
+    def ldf(k: Long, n: Long): Long = {
       if (n % k == 0) k
       else if ((k * k) > n) n
       else ldf((k + 1), n)

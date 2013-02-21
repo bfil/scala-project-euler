@@ -17,5 +17,5 @@ object Problem3 extends Problem {
   val n = 600851475143L
 
   def solve() =
-    primes takeWhile (_ <= sqrt(n)) filter (n % _ == 0) last
+    factors(n).max
 }
