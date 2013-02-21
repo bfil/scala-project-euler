@@ -22,7 +22,6 @@ object Problem6 extends Problem {
   // Parameters
   val max = 100
 
-  def solve() = {
+  def solve() =
     0
-  }
 }

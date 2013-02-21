@@ -3,7 +3,7 @@ package org.bfil.euler
 import org.bfil.euler._
 
 object Problem1 extends Problem {
-  
+
   val name = "Multiples of 3 and 5"
   val description =
     """
@@ -12,10 +12,10 @@ object Problem1 extends Problem {
     Find the sum of all the multiples of 3 or 5 below 1000.
     """
   val solution = 233168
-  
+
   // Parameters
   val max = 1000
-  
+
   def solve() =
-    1 until max filter( i => i % 3 == 0 || i % 5 == 0 ) reduceLeft ( _ + _ )
+    1 until max filter (i => i % 3 == 0 || i % 5 == 0) reduceLeft (_ + _)
 }

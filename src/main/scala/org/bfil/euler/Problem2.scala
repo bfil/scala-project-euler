@@ -3,7 +3,7 @@ package org.bfil.euler
 import org.bfil.euler._
 
 object Problem2 extends Problem {
-  
+
   val name = "Even Fibonacci numbers"
   val description =
     """
@@ -14,10 +14,10 @@ object Problem2 extends Problem {
     By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
     """
   val solution = 4613732
-  
+
   // Parameters
   val max = 4000000
-  
+
   def solve() =
-    fibs.filter( _ % 2 == 0 ).takeWhile( _ < max ).sum
+    fibs.filter(_ % 2 == 0).takeWhile(_ < max).sum
 }

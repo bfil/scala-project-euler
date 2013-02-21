@@ -20,6 +20,6 @@ object Problem4 extends Problem {
   def solve() =
     (for {
       i <- min to max
-      j <- i to max if isPalindrome( (i * j).toString )
+      j <- i to max if isPalindrome((i * j).toString)
     } yield i * j).max
 }
