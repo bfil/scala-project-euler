@@ -17,13 +17,12 @@ object Problem5 extends Problem {
   // Parameters
   val max = 20
 
-  def solve() = {
-    (for (
-      i <- 2 to max;
-      val fs = factors( i );
-      j <- fs.distinct.map( n => {
+  def solve() =
+    (for {
+      i <- 2 to max
+      fs = factors(i)
+      j <- fs.distinct.map(n => {
         (n, fs.count(_ == n))
       })
-    ) yield j).distinct.sorted.toMap.map( n => pow(n._1, n._2) ).reduceLeft( _ * _ )
-  }
+    } yield j).distinct.sorted.toMap.map(n => pow(n._1, n._2)).reduceLeft(_ * _)
 }

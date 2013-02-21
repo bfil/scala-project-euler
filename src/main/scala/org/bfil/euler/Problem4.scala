@@ -18,11 +18,8 @@ object Problem4 extends Problem {
   val max = 999
 
   def solve() =
-    
-    (for (
-      i <- min to max;
-      j <- i to max;
-      val product = (i * j) if isPalindrome( product.toString )
-    ) yield product).
-      max
+    (for {
+      i <- min to max
+      j <- i to max if isPalindrome( (i * j).toString )
+    } yield i * j).max
 }
