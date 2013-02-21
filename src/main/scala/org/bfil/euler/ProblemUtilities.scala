@@ -15,6 +15,21 @@ trait ProblemUtilities {
     }
     ps
   }
-  
+
   def isPalindrome(s: String): Boolean = s == s.reverse
+
+  def factors(n: Int): List[Int] = {
+    def ldf(k: Int, n: Int): Int = {
+      if (n % k == 0) k
+      else if ((k * k) > n) n
+      else ldf((k + 1), n)
+    }
+    n match {
+      case 1 => Nil;
+      case _ => {
+        val p = ldf(2, n)
+        p :: factors(n / p)
+      }
+    }
+  }
 }

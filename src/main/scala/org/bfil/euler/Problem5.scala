@@ -1,6 +1,7 @@
 package org.bfil.euler
 
 import org.bfil.euler._
+import scala.math._
 
 object Problem5 extends Problem {
 
@@ -16,6 +17,13 @@ object Problem5 extends Problem {
   // Parameters
   val max = 20
 
-  def solve() =
-    0
+  def solve() = {
+    (for (
+      i <- 2 to max;
+      val fs = factors( i );
+      val fcs = fs.distinct.map( n => {
+        (n, fs.count(_ == n))
+      })
+    ) yield fcs).flatMap( n => n ).distinct.sorted.toMap.map( n => pow(n._1, n._2) ).reduceLeft( _ * _ )
+  }
 }
