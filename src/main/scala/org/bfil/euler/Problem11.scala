@@ -15,6 +15,7 @@ object Problem11 extends Problem {
   val solution = 70600674
 
   // Parameters
+  val len = 4
   val grid = List(
     List(8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8),
     List(49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00),
@@ -37,6 +38,39 @@ object Problem11 extends Problem {
     List(20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54),
     List(01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48))
 
-  def solve() =
-    0
+  def solve() = {
+
+    val width = grid(0).length
+    val height = grid.length
+
+    def hProduct(x: Int, y: Int) =
+      if (x + len <= width) grid(y).slice(x, x + len).product else 0
+
+    def vProduct(x: Int, y: Int) =
+      if (y + len <= height) grid.slice(y, y + len).map(_(x)).product else 0
+
+    def rdProduct(x: Int, y: Int) = {
+      if (x + len <= width && y + len <= height) {
+        val sliced = grid.slice(y, y + len)
+        (for (k <- 0 until len) yield sliced(k)(x + k)).product
+      } else 0
+    }
+
+    def ldProduct(x: Int, y: Int) = {
+      if (x - len >= -1 && y + len <= height) {
+        val sliced = grid.slice(y, y + len)
+        (for (k <- 0 until len) yield sliced(k)(x - k)).product
+      } else 0
+    }
+
+    (for {
+      x <- 0 until width
+      y <- 0 until height
+      products = List(
+        hProduct(x, y),
+        vProduct(x, y),
+        rdProduct(x, y),
+        ldProduct(x, y))
+    } yield products).flatten.max
+  }
 }
