@@ -32,4 +32,16 @@ trait ProblemUtilities {
       }
     }
   }
+
+  def factorsWithPowers(n: Long): List[(Long, Int)] = {
+    val fs = factors(n)
+    fs.distinct.map(n => {
+      (n, fs.count(_ == n))
+    })
+  }
+
+  def triangles = Stream.from(1).map(n => n * (n + 1) / 2)
+
+  def numberOfDivisors(n: Long) =
+    factorsWithPowers(n).foldLeft(1L)((a, b) => a * (b._2 + 1))
 }

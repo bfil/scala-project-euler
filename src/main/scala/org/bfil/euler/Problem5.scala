@@ -19,9 +19,6 @@ object Problem5 extends Problem {
   def solve() =
     (for {
       i <- 2 to max
-      fs = factors(i)
-      j <- fs.distinct.map(n => {
-        (n, fs.count(_ == n))
-      })
+      j <- factorsWithPowers(i)
     } yield j).distinct.sorted.toMap.map(n => pow(n._1, n._2)).reduceLeft(_ * _)
 }
