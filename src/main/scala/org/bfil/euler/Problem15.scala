@@ -14,6 +14,17 @@ object Problem15 extends Problem {
   // Parameters
   val size = 20
 
-  def solve =
-    0
+  def solve = {
+
+    val cache = collection.mutable.Map.empty[(Int, Int), Long]
+
+    def countRoutes(x: Int, y: Int): Long = {
+      if (x < size && y < size) {
+        if (!cache.contains(x, y)) cache((x, y)) = countRoutes(x + 1, y) + countRoutes(x, y + 1)
+        cache((x, y))
+      } else 1
+    }
+
+    countRoutes(0, 0)
+  }
 }
