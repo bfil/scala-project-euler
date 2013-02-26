@@ -37,7 +37,7 @@ object Problem8 extends Problem {
     """.replace("\n", "").replace(" ", "")
 
   def solve = {
-    val digits = num.toArray.map(_.toString.toInt)
+    val digits = num.map(_.asDigit)
     (0 to digits.length - 5).map(n => digits.slice(n, n + 5).product).max
   }
 }
