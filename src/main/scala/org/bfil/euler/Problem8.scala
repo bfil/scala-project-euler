@@ -6,6 +6,8 @@ object Problem8 extends Problem {
   val description =
     """
     Find the greatest product of five consecutive digits in the 1000-digit number.
+    
+    [...]
     """
   val solution = 40824
 

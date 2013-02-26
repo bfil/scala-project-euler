@@ -15,5 +15,5 @@ object Problem7 extends Problem {
   val pos = 10001
 
   def solve =
-    primes.take(pos).last
+    primes(pos-1)
 }

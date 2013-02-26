@@ -16,5 +16,6 @@ object ProjectEuler extends App {
     Problem10,
     Problem11,
     Problem12,
-    Problem13);
+    Problem13,
+    Problem14);
 }

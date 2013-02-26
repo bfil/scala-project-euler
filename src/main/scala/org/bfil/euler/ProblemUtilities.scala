@@ -25,7 +25,7 @@ trait ProblemUtilities {
       else ldf((k + 1), n)
     }
     n match {
-      case 1 => Nil;
+      case 1 => Nil
       case _ => {
         val p = ldf(2, n)
         p :: factors(n / p)
@@ -44,4 +44,9 @@ trait ProblemUtilities {
 
   def numberOfDivisors(n: Long) =
     factorsWithPowers(n).foldLeft(1L)((a, b) => a * (b._2 + 1))
+
+  def collatzLength(n: Long, count: Int = 0): Int = n match {
+    case 1 => count
+    case _ => collatzLength(if (n % 2 == 0) n / 2 else (3 * n) + 1, count + 1)
+  }
 }
