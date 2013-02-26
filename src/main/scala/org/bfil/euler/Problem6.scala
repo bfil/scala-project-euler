@@ -22,7 +22,7 @@ object Problem6 extends Problem {
   // Parameters
   val max = 100
 
-  def solve() = {
+  def solve = {
     val (sum, squaresSum) = (1 to max).map(n => (n, pow(n, 2))).reduceLeft((a, b) => (a._1 + b._1, a._2 + b._2))
     pow(sum, 2) - squaresSum
   }

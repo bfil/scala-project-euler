@@ -16,6 +16,6 @@ object Problem3 extends Problem {
   // Parameters
   val n = 600851475143L
 
-  def solve() =
+  def solve =
     factors(n).max
 }

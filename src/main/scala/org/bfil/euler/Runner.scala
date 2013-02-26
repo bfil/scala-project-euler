@@ -2,9 +2,10 @@ package org.bfil.euler
 
 object Runner {
   def run(problems: Problem*) = for (problem <- problems) {
+    val problemId = problem.getClass.getSimpleName
     resultOf(problem) match {
-      case (true, elapsedTime) => println(problem.name + ": solved in " + elapsedTime + "ms!")
-      case _ => println(problem.name + ": not solved!")
+      case (true, elapsedTime) => println(problemId + " " + problem.name + ": solved in " + elapsedTime + "ms!")
+      case _ => println(problemId + " " + problem.name + ": not solved!")
     }
   }
 

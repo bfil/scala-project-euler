@@ -14,6 +14,6 @@ object Problem1 extends Problem {
   // Parameters
   val max = 1000
 
-  def solve() =
+  def solve =
     1 until max filter (i => i % 3 == 0 || i % 5 == 0) reduceLeft (_ + _)
 }

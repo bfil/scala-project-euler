@@ -20,7 +20,7 @@ object Problem9 extends Problem {
   // Parameters
   val sum = 1000
 
-  def solve() =
+  def solve =
     (for {
       a <- 1 to sum / 2
       b <- a to sum / 2

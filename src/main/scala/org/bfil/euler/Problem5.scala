@@ -16,7 +16,7 @@ object Problem5 extends Problem {
   // Parameters
   val max = 20
 
-  def solve() =
+  def solve =
     (for {
       i <- 2 to max
       j <- factorsWithPowers(i)

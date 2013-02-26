@@ -27,6 +27,6 @@ object Problem12 extends Problem {
   // Parameters
   val min = 500
 
-  def solve() =
+  def solve =
     triangles.find( numberOfDivisors(_) > min ).get
 }

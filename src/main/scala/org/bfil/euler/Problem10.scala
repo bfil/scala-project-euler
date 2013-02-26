@@ -14,6 +14,6 @@ object Problem10 extends Problem {
   // Parameters
   val max = 2000000
 
-  def solve() =
+  def solve =
     primes.takeWhile(_ < max).foldLeft(0L)(_ + _)
 }

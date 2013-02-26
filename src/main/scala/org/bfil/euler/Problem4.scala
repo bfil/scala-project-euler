@@ -15,7 +15,7 @@ object Problem4 extends Problem {
   val min = 100
   val max = 999
 
-  def solve() =
+  def solve =
     (for {
       i <- min to max
       j <- i to max if isPalindrome((i * j).toString)
