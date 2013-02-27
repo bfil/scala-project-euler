@@ -1,7 +1,5 @@
 package org.bfil.euler
 
-import scala.math.sqrt
-
 object Problem3 extends Problem {
 
   val name = "Largest prime factor"

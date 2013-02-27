@@ -1,7 +1,5 @@
 package org.bfil.euler
 
-import scala.math.BigInt
-
 object Problem13 extends Problem {
 
   val name = "Large sum"
